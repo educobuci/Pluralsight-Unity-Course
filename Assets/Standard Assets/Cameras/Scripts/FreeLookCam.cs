@@ -76,6 +76,13 @@ namespace UnityStandardAssets.Cameras
             var x = CrossPlatformInputManager.GetAxis("Xbox360ControllerRightX");
             var y = CrossPlatformInputManager.GetAxis("Xbox360ControllerRightY");
 
+            var lx = CrossPlatformInputManager.GetAxis("Horizontal");
+
+            if (x == 0f)
+            {
+                x = lx * 0.05f;
+            }
+
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_LookAngle += x*m_TurnSpeed;
 
